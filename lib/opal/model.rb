@@ -7,8 +7,28 @@ module Opal
       define_method("#{attr_name}=") { |value| @attributes[attr_name] = value }
     end
 
+    def self.boolean(attr_name)
+      add_column attr_name, Column::BooleanColumn
+    end
+
+    def self.date(attr_name)
+      add_column attr_name, Column::DateColumn
+    end
+
+    def self.float(attr_name)
+      add_column attr_name, Column::FloatColumn
+    end
+
+    def self.integer(attr_name)
+      add_column attr_name, Column::IntegerColumn
+    end
+
     def self.string(attr_name)
       add_column attr_name, Column::StringColumn
+    end
+
+    def self.time(attr_name)
+      add_column attr_name, Column::TimeColumn
     end
 
     def self.columns

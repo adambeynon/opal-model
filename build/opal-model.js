@@ -26,11 +26,56 @@
         return value;
       };
 
-      return (function(__base, __super){
+      (function(__base, __super){
+        function BooleanColumn() {};
+        BooleanColumn = __klass(__base, __super, "BooleanColumn", BooleanColumn);
+
+        var BooleanColumn_prototype = BooleanColumn.prototype, __scope = BooleanColumn._scope;
+
+        return nil
+      })(Column, __scope.Column);
+
+      (function(__base, __super){
+        function DateColumn() {};
+        DateColumn = __klass(__base, __super, "DateColumn", DateColumn);
+
+        var DateColumn_prototype = DateColumn.prototype, __scope = DateColumn._scope;
+
+        return nil
+      })(Column, __scope.Column);
+
+      (function(__base, __super){
+        function FloatColumn() {};
+        FloatColumn = __klass(__base, __super, "FloatColumn", FloatColumn);
+
+        var FloatColumn_prototype = FloatColumn.prototype, __scope = FloatColumn._scope;
+
+        return nil
+      })(Column, __scope.Column);
+
+      (function(__base, __super){
+        function IntegerColumn() {};
+        IntegerColumn = __klass(__base, __super, "IntegerColumn", IntegerColumn);
+
+        var IntegerColumn_prototype = IntegerColumn.prototype, __scope = IntegerColumn._scope;
+
+        return nil
+      })(Column, __scope.Column);
+
+      (function(__base, __super){
         function StringColumn() {};
         StringColumn = __klass(__base, __super, "StringColumn", StringColumn);
 
         var StringColumn_prototype = StringColumn.prototype, __scope = StringColumn._scope;
+
+        return nil
+      })(Column, __scope.Column);
+
+      return (function(__base, __super){
+        function TimeColumn() {};
+        TimeColumn = __klass(__base, __super, "TimeColumn", TimeColumn);
+
+        var TimeColumn_prototype = TimeColumn.prototype, __scope = TimeColumn._scope;
 
         return nil
       })(Column, __scope.Column);
@@ -51,7 +96,7 @@
       function Model() {};
       Model = __klass(__base, __super, "Model", Model);
 
-      ;Model._sdonate(["$add_column", "$string", "$columns"]);      var Model_prototype = Model.prototype, __scope = Model._scope;
+      ;Model._sdonate(["$add_column", "$boolean", "$date", "$float", "$integer", "$string", "$time", "$columns"]);      var Model_prototype = Model.prototype, __scope = Model._scope;
       Model_prototype.attributes = nil;
 
       Model.$add_column = function(attr_name, column_klass) {
@@ -76,9 +121,34 @@
         }, __a._s = this, __a), __c.$define_method("" + (attr_name) + "="));
       };
 
+      Model.$boolean = function(attr_name) {
+        
+        return this.$add_column(attr_name, (__scope.Column)._scope.BooleanColumn)
+      };
+
+      Model.$date = function(attr_name) {
+        
+        return this.$add_column(attr_name, (__scope.Column)._scope.DateColumn)
+      };
+
+      Model.$float = function(attr_name) {
+        
+        return this.$add_column(attr_name, (__scope.Column)._scope.FloatColumn)
+      };
+
+      Model.$integer = function(attr_name) {
+        
+        return this.$add_column(attr_name, (__scope.Column)._scope.IntegerColumn)
+      };
+
       Model.$string = function(attr_name) {
         
         return this.$add_column(attr_name, (__scope.Column)._scope.StringColumn)
+      };
+
+      Model.$time = function(attr_name) {
+        
+        return this.$add_column(attr_name, (__scope.Column)._scope.TimeColumn)
       };
 
       Model.$columns = function() {
