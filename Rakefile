@@ -1,9 +1,5 @@
-require 'bundler/setup'
-require 'opal/rake_task'
+require 'bundler'
+Bundler.require
 
-Opal::RakeTask.new do |t|
-  t.name = 'opal-model'
-  t.dependencies = %w[opal-spec]
-end
-
-task :default => [:opal, 'opal:test']
+require 'opal/spec/rake_task'
+Opal::Spec::RakeTask.new(:default)
